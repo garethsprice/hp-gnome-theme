@@ -21,9 +21,17 @@ have() { command -v "$1" >/dev/null 2>&1; }
 have_schema() { gsettings list-schemas 2>/dev/null | grep -qx "$1"; }
 
 # gset SCHEMA KEY VALUE: back up the current value (once), then set it.
+# Skips gracefully if the schema or the individual key is absent (e.g. accent-color
+# was added in GNOME 43; on older GNOME the key does not exist).
 gset() {
     local schema=$1 key=$2 value=$3
     have_schema "$schema" || { warn "skipping $schema $key (schema not installed)"; return 0; }
+    # Check the key exists in this schema; gsettings get/set both fail with
+    # "No such key" on older GNOME versions that lack the key.
+    if ! gsettings list-keys "$schema" 2>/dev/null | grep -qx "$key"; then
+        info "skipping $schema $key (key not present in this GNOME version)"
+        return 0
+    fi
     mkdir -p "$STATE_DIR"
     if ! grep -q "^$schema $key " "$GSETTINGS_BACKUP" 2>/dev/null; then
         echo "$schema $key $(gsettings get "$schema" "$key")" >> "$GSETTINGS_BACKUP"
@@ -35,7 +43,9 @@ gsettings_restore() {
     [ -f "$GSETTINGS_BACKUP" ] || return 0
     local schema key value
     while read -r schema key value; do
-        have_schema "$schema" && gsettings set "$schema" "$key" "$value"
+        have_schema "$schema" || continue
+        # Skip keys absent on this machine (e.g. accent-color on pre-43 GNOME)
+        gsettings list-keys "$schema" 2>/dev/null | grep -qx "$key" && gsettings set "$schema" "$key" "$value"
     done < "$GSETTINGS_BACKUP"
     rm -f "$GSETTINGS_BACKUP"
 }
