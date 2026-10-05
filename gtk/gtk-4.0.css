@@ -1,0 +1,47 @@
+/* HP brand palette for GTK4 / libadwaita (matches Ghostty "HP" theme)
+ *   Electric Blue #0096D6 · Accent Blues #4DB8E8 / #006FA3 · blue-tinted dark greys
+ *   Pale Gray #E2E8EC
+ * Delete this file to revert to stock Yaru.
+ */
+
+/* Accent: applies in light and dark mode */
+:root {
+  --accent-bg-color: #0096D6;
+  --accent-fg-color: #FFFFFF;
+  --accent-color: #0096D6;
+}
+
+/* Surfaces: dark mode only, so light mode stays stock */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --accent-color: #4DB8E8;             /* lighter blue for accent-coloured text on dark */
+
+    --window-bg-color: #1A1E22;
+    --window-fg-color: #E2E8EC;
+    --view-bg-color: #14181C;
+    --view-fg-color: #E2E8EC;
+
+    --headerbar-bg-color: #242A30;
+    --headerbar-fg-color: #FFFFFF;
+    --headerbar-backdrop-color: #1A1E22;
+
+    --sidebar-bg-color: #1F2428;
+    --sidebar-fg-color: #E2E8EC;
+    --sidebar-backdrop-color: #1A1E22;
+    --secondary-sidebar-bg-color: #1D2226;
+
+    --card-bg-color: rgb(255 255 255 / 5%);
+    --dialog-bg-color: #242A30;
+    --popover-bg-color: #242A30;
+    --thumbnail-bg-color: #242A30;
+
+    --success-bg-color: #2E8A5E;
+    --success-color: #4DB88A;
+    --warning-bg-color: #C98A1A;
+    --warning-color: #E8C84D;
+    --destructive-bg-color: #006FA3;
+    --destructive-color: #4DB8E8;
+    --error-bg-color: #006FA3;
+    --error-color: #4DB8E8;
+  }
+}

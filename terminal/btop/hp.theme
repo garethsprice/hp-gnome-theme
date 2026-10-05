@@ -1,0 +1,55 @@
+# HP — btop theme built from the HP brand palette (matches Ghostty "HP" theme)
+#   Electric Blue #0096D6 · Accent Blues #4DB8E8 / #006FA3 / #004D6E · Pale Gray #E2E8EC
+#   Deep Teal #1A5A6E · Pale Cyan #A0D4E0 · blue-tinted dark greys to match the GTK overrides.
+#   Green/yellow are derived, not HP.
+
+theme[main_bg]="#1A1E22"
+theme[main_fg]="#E2E8EC"
+theme[title]="#FFFFFF"
+theme[hi_fg]="#4DB8E8"
+theme[selected_bg]="#004D6E"
+theme[selected_fg]="#FFFFFF"
+theme[inactive_fg]="#6E7A82"
+theme[graph_text]="#9AAAB5"
+theme[meter_bg]="#323840"
+theme[proc_misc]="#4DB8E8"
+
+theme[cpu_box]="#424A52"
+theme[mem_box]="#424A52"
+theme[net_box]="#424A52"
+theme[proc_box]="#424A52"
+theme[div_line]="#323840"
+
+# Load gradients: green (low) -> yellow -> Electric Blue (high), so blue only means "high".
+# Green and yellow are derived (HP has none); they match the Ghostty palette.
+theme[temp_start]="#4DB88A"
+theme[temp_mid]="#E8C84D"
+theme[temp_end]="#0096D6"
+theme[cpu_start]="#4DB88A"
+theme[cpu_mid]="#E8C84D"
+theme[cpu_end]="#0096D6"
+theme[used_start]="#4DB88A"
+theme[used_mid]="#E8C84D"
+theme[used_end]="#0096D6"
+
+theme[free_start]="#3E7A5E"
+theme[free_mid]="#4DB88A"
+theme[free_end]="#8AD8B8"
+theme[cached_start]="#3D5A99"
+theme[cached_mid]="#4D8AD6"
+theme[cached_end]="#A0D4F0"
+theme[available_start]="#6E7A82"
+theme[available_mid]="#9AAAB5"
+theme[available_end]="#E2E8EC"
+
+theme[download_start]="#3D5A99"
+theme[download_mid]="#4D8AD6"
+theme[download_end]="#A0D4F0"
+# Upload: HP teals/cyans, so network traffic never looks like a warning
+theme[upload_start]="#1A5A6E"
+theme[upload_mid]="#4DB4C8"
+theme[upload_end]="#A0D4E0"
+
+theme[process_start]="#4DB88A"
+theme[process_mid]="#E8C84D"
+theme[process_end]="#0096D6"

@@ -1,0 +1,25 @@
+hp-gnome-theme
+==============
+
+Trademarks
+  HP and the HP logo are trademarks of HP Inc. This project is unofficial and is
+  not affiliated with, endorsed by, or supported by HP Inc. It contains colour
+  values only; no HP logos, fonts or wallpapers are bundled or installed.
+
+Yaru
+  gdm/gdm.sh builds the login screen theme on the user's machine from the
+  installed Yaru GNOME Shell theme (https://github.com/ubuntu/yaru, GPL-3.0 /
+  CC-BY-SA-4.0), appending gdm/hp-gdm.css. The resulting file is a
+  derivative of Yaru and is covered by Yaru's licence. No Yaru files are
+  distributed in this repository.
+
+Plymouth
+  plymouth/plymouth.sh copies the spinner images from the installed Plymouth
+  "spinner" theme (GPL-2.0-or-later) into the generated theme directory at
+  install time. No Plymouth files are distributed in this repository.
+
+Fonts
+  HP Forma DJR Office is a proprietary typeface and is not included. Forma DJT
+  is a free typeface available for download online; check its licence before use.
+  Montserrat (SIL Open Font License) is installed from the distribution's
+  packages when requested.

@@ -1,0 +1,7 @@
+{
+  "uuid": "hp-gnome-theme@hp-gnome-theme",
+  "name": "HP GNOME Theme",
+  "description": "Recolours the top bar, shell popups and lock screen with the HP brand palette. Styling only; lives in stylesheet.css. Unofficial, not affiliated with HP.",
+  "shell-version": ["50"],
+  "session-modes": ["user", "unlock-dialog"]
+}

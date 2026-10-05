@@ -1,0 +1,42 @@
+
+/* ===== HP overrides (appended by gdm/build.sh) =====
+ *   Electric Blue #0096D6 · Accent Blues #4DB8E8 / #006FA3 · blue-tinted dark grey #1A1E22
+ *   Mirrors shell/hp-gnome-theme@hp-gnome-theme/stylesheet.css
+ */
+
+/* Background: the wallpaper passed to install.sh --wallpaper, or plain dark grey */
+#lockDialogGroup {
+  @BACKGROUND@
+}
+
+/* Top bar: dark grey, matching the desktop */
+#panel,
+#panel.login-screen,
+#panel.unlock-screen { background-color: #1A1E22 !important; }
+#panel.login-screen .panel-button,
+#panel.unlock-screen .panel-button { color: #E2E8EC; }
+
+/* Password / username entry */
+.login-dialog .login-dialog-prompt-entry,
+.login-dialog .login-dialog-prompt-entry:hover { background-color: rgba(26, 30, 34, 0.80); }
+.login-dialog .login-dialog-prompt-entry:focus {
+  background-color: rgba(26, 30, 34, 0.90);
+  box-shadow: inset 0 0 0 2px #0096D6 !important;
+  selection-background-color: #0096D6;
+}
+
+/* Accent buttons and user list */
+.login-dialog-button.default,
+.button.default { background-color: #0096D6; color: #FFFFFF; }
+.login-dialog-button.default:hover,
+.button.default:hover { background-color: #4DB8E8; }
+.login-dialog-button.default:active,
+.button.default:active { background-color: #006FA3; }
+.login-dialog-user-list-view .login-dialog-user-list .login-dialog-user-list-item:logged-in .user-icon { border-color: #0096D6; }
+.login-dialog-user-list-view .login-dialog-user-list .login-dialog-user-list-item:logged-in .user-icon StIcon { background-color: rgba(0, 150, 214, 0.30); }
+
+/* Popups (keyboard/accessibility menus) and clock weights per brand guide */
+.popup-menu-content,
+.candidate-popup-content { background-color: #242A30; border-color: #323840; }
+.unlock-dialog-clock .unlock-dialog-clock-time { font-weight: bold; }
+.unlock-dialog-clock .unlock-dialog-clock-date { font-weight: normal; }

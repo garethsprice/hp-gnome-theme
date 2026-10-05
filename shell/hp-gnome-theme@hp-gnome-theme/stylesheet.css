@@ -1,0 +1,55 @@
+/* HP brand palette for the GNOME Shell top bar and popups (over Yaru-dark)
+ *   Electric Blue #0096D6 · Accent Blues #4DB8E8 / #006FA3 / #003A52 · Pale Gray #E2E8EC
+ *   Blue-tinted dark greys match gtk/gtk-4.0.css.
+ * Disable the "HP GNOME Theme" extension to revert.
+ */
+
+/* Top bar: dark grey to match the dock, with the Activities pill in Electric Blue.
+ * The active workspace dot is the wide pill; inactive dots inherit GNOME's reduced opacity. */
+#panel,
+#panel:overview { background-color: #1A1E22 !important; }
+#panel .panel-button,
+#panel:overview .panel-button { color: #E2E8EC; }
+#panel .panel-button:focus,
+#panel .panel-button:hover { box-shadow: inset 0 0 0 100px rgba(255, 255, 255, 0.12); }
+#panel .panel-button:active,
+#panel .panel-button:checked { box-shadow: inset 0 0 0 100px rgba(255, 255, 255, 0.20); }
+#panel .panel-button#panelActivities .workspace-dot,
+#panel:overview .panel-button#panelActivities .workspace-dot { background-color: #0096D6 !important; }
+
+/* Popups, quick settings, calendar, notifications */
+.popup-menu-content,
+.candidate-popup-content { background-color: #242A30; border-color: #323840; }
+.message { background-color: #343A42; }
+.message:second-in-stack { background-color: #2D3238; }
+
+/* Accent widgets */
+.quick-toggle:checked,
+.button.default,
+.calendar .calendar-day.calendar-today { background-color: #0096D6; color: #FFFFFF; }
+.quick-toggle:hover:checked,
+.quick-toggle:focus:hover:checked,
+.button.default:hover,
+.calendar .calendar-day.calendar-today:hover { background-color: #4DB8E8; }
+.quick-toggle:active:checked,
+.button.default:active,
+.calendar .calendar-day.calendar-today:active { background-color: #006FA3; }
+.toggle-switch:checked { background: #0096D6; }
+.slider { -barlevel-active-background-color: #0096D6; }
+
+/* Lock screen (needs "unlock-dialog" in metadata.json session-modes).
+ * The dark #panel rule above also applies here, replacing Yaru's transparent bar. */
+.unlock-dialog-clock .unlock-dialog-clock-time { font-weight: bold; }      /* HP Forma Bold: headline */
+.unlock-dialog-clock .unlock-dialog-clock-date { font-weight: normal; }    /* HP Forma Regular: secondary */
+.unlock-dialog .login-dialog-prompt-entry,
+.unlock-dialog .login-dialog-prompt-entry:hover { background-color: rgba(26, 30, 34, 0.75); }
+.unlock-dialog .login-dialog-prompt-entry:focus {
+  background-color: rgba(26, 30, 34, 0.85);
+  box-shadow: inset 0 0 0 2px #0096D6;
+  selection-background-color: #0096D6;
+}
+.unlock-dialog .login-dialog-button.default,
+.unlock-dialog .button.default { background-color: #0096D6; color: #FFFFFF; }
+.unlock-dialog .login-dialog-button.default:hover,
+.unlock-dialog .button.default:hover { background-color: #4DB8E8; }
+.unlock-dialog-notifications-container .message { background-color: rgba(26, 30, 34, 0.75); }

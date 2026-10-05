@@ -1,0 +1,39 @@
+/* HP brand palette for GTK3 apps on Yaru-dark (matches Ghostty "HP" theme)
+ *   Electric Blue #0096D6 · Deep Blue #004D6E · Pale Gray #E2E8EC · blue-tinted dark greys
+ * Yaru's GTK3 styles mostly use fixed colours, so this retints the main surfaces
+ * and accent widgets directly. Delete this file to revert to stock Yaru.
+ */
+
+@define-color theme_fg_color #E2E8EC;
+@define-color theme_bg_color #1A1E22;
+@define-color theme_base_color #14181C;
+@define-color theme_selected_bg_color #0096D6;
+@define-color theme_selected_fg_color #FFFFFF;
+@define-color theme_unfocused_bg_color #1A1E22;
+@define-color theme_unfocused_base_color #14181C;
+@define-color theme_unfocused_selected_bg_color #004D6E;
+@define-color borders #0C1014;
+@define-color content_view_bg #14181C;
+
+/* Surfaces */
+window.background, .background { background-color: #1A1E22; color: #E2E8EC; }
+.view, textview text, iconview, treeview.view { background-color: #14181C; }
+headerbar, .titlebar { background: #242A30; border-color: #0C1014; box-shadow: none; }
+headerbar:backdrop, .titlebar:backdrop { background: #1A1E22; }
+.sidebar, placessidebar, stacksidebar { background-color: #1F2428; }
+popover, popover.background, menu, .menu, .context-menu { background-color: #242A30; }
+
+/* Accent */
+selection, *:selected, .view:selected, row:selected,
+treeview.view:selected, iconview:selected, entry selection { background-color: #0096D6; color: #FFFFFF; }
+*:selected:backdrop, row:selected:backdrop { background-color: #004D6E; }
+button.suggested-action { background: #0096D6; border-color: #006FA3; color: #FFFFFF; }
+button.suggested-action:hover { background: #4DB8E8; }
+switch:checked { background-color: #0096D6; border-color: #006FA3; }
+check:checked, radio:checked { background: #0096D6; border-color: #006FA3; color: #FFFFFF; }
+scale highlight, progressbar progress, levelbar block.filled { background: #0096D6; border-color: #0096D6; }
+entry:focus { border-color: #0096D6; box-shadow: inset 0 0 0 1px #0096D6; }
+link, *:link { color: #4DB8E8; }
+
+/* Keep the Desktop Icons (DING) window transparent so the wallpaper shows through */
+window.desktopwindow, window.desktopwindow.background { background-color: transparent; }
