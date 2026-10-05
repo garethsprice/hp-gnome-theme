@@ -19,7 +19,7 @@ User-level components (no sudo), all installed by default:
 Options:
   --only LIST          Comma-separated subset of the components above
   --wallpaper PATH     Image for the desktop, login screen and boot splash (none is bundled)
-  --font NAME          Font family (default: HP Forma DJR Office, then Forma DJT, then Montserrat)
+  --font NAME          Font family (default: HP Forma DJR Office, then Forma DJR Text, then Montserrat)
   --font-size N        Interface font size (default: 10)
   --install-deps       apt install fonts-montserrat if no brand font is found
   --gdm                Also theme the login screen (Ubuntu/Debian with Yaru; uses sudo)
@@ -63,7 +63,7 @@ if wants desktop || [ "$DO_GDM" = 1 ] || [ "$DO_PLYMOUTH" = 1 ]; then
         FONT=$(pick_font)
     fi
     if [ -z "$FONT" ]; then
-        warn "no brand font found; keeping current fonts (install HP Forma DJR Office or Forma DJT, or use --install-deps for Montserrat)"
+        warn "no brand font found; keeping current fonts (install HP Forma DJR Office or Forma DJR Text, or use --install-deps for Montserrat)"
     else
         info "Font: $FONT"
     fi

@@ -47,9 +47,15 @@ Log out and back in once so GNOME loads the shell extension. After that, running
 
 ### Fonts
 
-HP's guidelines use **HP Forma DJR Office**: Medium weight for headlines and Regular weight for all other copy. It is a proprietary typeface and is not included. If you have a licensed copy installed, the installer uses it. Otherwise it falls back to **Forma DJT**, and then to **Montserrat**.
+HP's guidelines use **HP Forma DJR Office**: Medium weight for headlines and Regular weight for all other copy. It is a proprietary typeface and is not included. If you have a licensed copy installed, the installer uses it. Otherwise it falls back to **Forma DJR**, and then to **Montserrat**.
 
-- **Forma DJT** is a free typeface you can download online (search "Forma DJT font" — it is distributed from the foundry's own site and a number of font repositories). Install it with your normal font manager (e.g. `sudo fc-cache` after dropping the `.ttf`/`.otf` into `~/.local/share/fonts` or `/usr/share/fonts`) and the installer will pick it up automatically. **Check the licence before you use it:** free-to-download does not always mean free-to-embed in a desktop theme, so read the foundry's licence terms and make sure personal/desktop use is permitted before relying on it.
+- **Forma DJR** is a free typeface you can download online (search "Forma DJR font" — it is distributed from the foundry's own site and a number of font repositories). It has no single "Forma DJR" family; it's split into optical sizes, so install one of these and the installer picks it up automatically (in priority order):
+  - `Forma DJR Text` — body/interface text (the usual default; this is what the installer prefers)
+  - `Forma DJR Variable` — one variable file covering all weights and optical sizes
+  - `Forma DJR` — if your copy registers a plain family
+  - (other cuts — `Micro`, `Deck`, `Display`, `Banner` — are for specific text sizes and aren't used by the installer)
+
+  Install with your normal font manager (e.g. drop the `.ttf`/`.otf` into `~/.local/share/fonts` or `/usr/share/fonts`, then `sudo fc-cache`). Run `fc-list | grep "Forma DJR"` to see the exact family strings on your machine. **Check the licence before you use it:** free-to-download does not always mean free-to-embed in a desktop theme, so read the foundry's licence terms and make sure personal/desktop use is permitted before relying on it.
 - **Montserrat** is free (SIL Open Font License), in Ubuntu's repos as `fonts-montserrat`, and a close geometric-sans substitute. Use `--install-deps` to have the installer fetch it when neither brand font is present.
 
 Monospace and terminal fonts aren't changed.

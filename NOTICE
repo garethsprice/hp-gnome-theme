@@ -19,7 +19,8 @@ Plymouth
   install time. No Plymouth files are distributed in this repository.
 
 Fonts
-  HP Forma DJR Office is a proprietary typeface and is not included. Forma DJT
-  is a free typeface available for download online; check its licence before use.
+  HP Forma DJR Office is a proprietary typeface and is not included. Forma DJR
+  is a free typeface available for download online (split into optical-size
+  families such as "Forma DJR Text"); check its licence before use.
   Montserrat (SIL Open Font License) is installed from the distribution's
   packages when requested.

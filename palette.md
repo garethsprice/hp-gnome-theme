@@ -46,4 +46,4 @@ btop load graphs (CPU, temperature, used memory, per-process CPU) run green `#4D
 
 ## Type
 
-The guidelines use HP Forma DJR Office Medium for headlines and Regular for body text. Forma DJT (free, downloadable online — check its licence) and Montserrat are the fallbacks. See the README's Fonts section.
+The guidelines use HP Forma DJR Office Medium for headlines and Regular for body text. Forma DJR (free, downloadable online — check its licence; install the "Forma DJR Text" family) and Montserrat are the fallbacks. See the README's Fonts section.

@@ -71,13 +71,16 @@ remove_block() {
     sed -i "\#$MARK_BEGIN#,/#$MARK_END#d" "$1"
 }
 
-# Pick the brand font: HP Forma DJR Office (proprietary) > Forma DJT (free, online) > Montserrat (free, in Ubuntu repos).
+# Pick the brand font: HP Forma DJR Office (proprietary) > Forma DJR Text > Forma DJR Variable > Montserrat.
+# "Forma DJR" has no plain family — it's split into optical sizes (Text, Micro, Deck, Display, Banner, Variable).
+# "Text" is the usual default for body/interface text; "Variable" is one file covering all weights.
 pick_font() {
     local families
     families=$(fc-list : family | tr ',' '\n')
     if grep -qx 'HP Forma DJR Office' <<< "$families"; then echo "HP Forma DJR Office"
-    elif grep -qx 'Forma DJT' <<< "$families"; then echo "Forma DJT"
-    elif grep -qx 'Forma' <<< "$families"; then echo "Forma"
+    elif grep -qx 'Forma DJR Text' <<< "$families"; then echo "Forma DJR Text"
+    elif grep -qx 'Forma DJR Variable' <<< "$families"; then echo "Forma DJR Variable"
+    elif grep -qx 'Forma DJR' <<< "$families"; then echo "Forma DJR"
     elif grep -qx 'Montserrat' <<< "$families"; then echo Montserrat
     else echo ""
     fi
