@@ -68,7 +68,7 @@ add_block() {
 
 remove_block() {
     [ -f "$1" ] || return 0
-    sed -i "\#$MARK_BEGIN#,/#$MARK_END#d" "$1"
+    sed -i "\#$MARK_BEGIN#,\#$MARK_END#d" "$1"
 }
 
 # Pick the brand font: HP Forma DJR Office (proprietary) > Forma DJR Text > Forma DJR Variable > Montserrat.
